@@ -1,0 +1,43 @@
+﻿<Window x:Class="MinesweeperWpf.wGameScene"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MinesweeperWpf"
+        mc:Ignorable="d"
+        Title="Minesweeper" Width="494">
+    <Grid Background="Gray">
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="Game">
+                <MenuItem Header="Restart" Click="MenuRestart_Click" ></MenuItem>
+                <Separator />
+                <MenuItem Header="Easy (9 x 9)" Click="MenuEasySize_Click"></MenuItem>
+                <MenuItem Header="Medium (16 x 16)" Click="MenuMediumSize_Click" ></MenuItem>
+                <MenuItem Header="Hard (16 x 30)" Click="MenuHardSize_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help" ></MenuItem>
+        </Menu>
+
+        <Grid Margin="10,30,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="txtMinesCount"/>
+            <Button Grid.Column="1" Height="30" Width="30">
+                <StackPanel>
+                    <Image Source="Resources/MainSmile.png"/>
+                </StackPanel>
+            </Button>
+            <TextBlock Grid.Column="2" x:Name="txtTime" Text="123"/>
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="3" x:Name="SceneDG" Background="#f0f0f0"/>
+        </Grid>
+    </Grid>
+</Window>
